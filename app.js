@@ -11,14 +11,13 @@ $(document).ready(function(){
         $('.displays').append(card);
         // Attach event listener to only the last child / the newly added card
         slipCardHandler($(".displays .card:last-child"));
-        clearForm();
+        clearForm(); // Clear all values of the form to empty
         return false;
     });
 });
 
 function slipCardHandler(selector){
     $(selector).click(function(){
-        console.log($(this).children("p").attr("data-isslip"));
         if ($(this).children("p").attr("data-isslip") === "1") {
             $(this).html(""
                     + "<h1>" + $(this).children("p").attr("data-firstname") + " " + $(this).children("p").attr("data-lastname")  + "</h1>"
